@@ -6,12 +6,9 @@
 
   # Default build command.
   command = "npm run build"
-  functions = "api"
 
 [dev]
-  command = "svelte-kit dev"
+  command = "vite dev"
+  framework = "svelte-kit"
+  targetPort = 5173
 
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200

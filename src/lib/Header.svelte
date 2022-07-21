@@ -50,7 +50,7 @@
 			{#if route.title !== 'Home'}
 				<a
 					href={route.link}
-					class="rounded px-4 lg:px-0 py-1 text-right text-lg font-semibold text-stone-200 hover:bg-stone-800 hover:text-white focus:outline-none lg:mt-0 lg:hover:bg-transparent [&aria-current='page']:text-lime-500"
+					class="rounded px-4 lg:px-0 py-1 text-right text-lg font-semibold text-stone-200 hover:bg-stone-800 hover:text-primary-500 focus:outline-none lg:mt-0 lg:hover:bg-transparent [&[aria-current='page']]:text-primary-400"
 					aria-current={$page.url.pathname === route.link ? 'page' : null}
 				>
 					{route.title}

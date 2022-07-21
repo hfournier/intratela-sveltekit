@@ -119,6 +119,8 @@
 		email = reset(email);
 		subject = reset(subject);
 		message = reset(message);
+
+		formValid = false;
 	}
 
 	function sendMsg() {
@@ -129,20 +131,14 @@
 			message: message.value
 		}).then(
 			(result) => {
-				if (result.status === 200) {
-					resetForm();
-					successMsg = true;
-					setTimeout(() => {
-						successMsg = false;
-					}, 3500);
-				} else {
-					errorMsg = true;
-					setTimeout(() => {
-						errorMsg = false;
-					}, 3500);
-				}
+				resetForm();
+				successMsg = true;
+				setTimeout(() => {
+					successMsg = false;
+				}, 3500);
 			},
 			(reason) => {
+				console.log(reason);
 				errorMsg = true;
 				setTimeout(() => {
 					errorMsg = false;
@@ -153,7 +149,8 @@
 
 	async function sendMail(params: any) {
 		// console.log(params);
-		const result = await fetch('/api/sendgrid', {
+		// const result = await fetch('/.netlify/functions/sendgrid', {
+		const res = await fetch('/sendgrid', {
 			method: 'POST',
 
 			headers: {
@@ -162,6 +159,9 @@
 			},
 			body: JSON.stringify(params)
 		});
+
+		const json = await res.json();
+		let result = JSON.stringify(json);
 		return result;
 	}
 </script>
