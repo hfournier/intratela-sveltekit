@@ -174,7 +174,7 @@
 </svelte:head>
 
 <h1 class="heading1">Contact</h1>
-<p class="px-4">We would love to hear from you, please get in touch. Let's start a conversation.</p>
+<p class="px-4">We would love to hear from you. Please get in touch. Let's start a conversation.</p>
 <section class="flex flex-col items-center justify-center sm:flex-row">
 	<div class="w-full p-4 sm:w-1/2 sm:p-8 lg:p-16">
 		<svg
