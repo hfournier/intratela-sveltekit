@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { bind } from 'svelte/internal';
-
 	let title = 'Contact | Intratela Technologies | Kelowna, BC';
 	let description =
 		"We would love to hear from you, please get in touch. Let's start a conversation.";
@@ -150,7 +148,7 @@
 	async function sendMail(params: any) {
 		// console.log(params);
 		// const result = await fetch('/.netlify/functions/sendgrid', {
-		const res = await fetch('/sendgrid', {
+		const res = await fetch('/contact', {
 			method: 'POST',
 
 			headers: {
